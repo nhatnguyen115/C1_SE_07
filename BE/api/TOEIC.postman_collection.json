@@ -1,0 +1,1726 @@
+{
+	"info": {
+		"_postman_id": "89436264-891e-4282-84db-4e99abc385e4",
+		"name": "TOEIC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42383003"
+	},
+	"item": [
+		{
+			"name": "welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"welcome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/8a19fa29-595e-402b-95b6-758387c06452?moduleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"8a19fa29-595e-402b-95b6-758387c06452"
+							],
+							"query": [
+								{
+									"key": "moduleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:57:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get User Successfully\",\n    \"data\": {\n        \"id\": \"8a19fa29-595e-402b-95b6-758387c06452\",\n        \"firstName\": \"Nguyen\",\n        \"lastName\": \"Hoang\",\n        \"gender\": \"MALE\",\n        \"dob\": null,\n        \"email\": \"hoang1109@gmail.com\",\n        \"phoneNumber\": \"0988676896\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getAuthorities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDIxMjIwODksImV4cCI6MTc0MjEyMzg4OX0.R3rB6YFCa2XFvO2qgQf7Hqhnrj-WdEA6A-oeMZXP67Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/authorities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"authorities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAuthorities",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/authorities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"authorities"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:56:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get User Authorities Successfully\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "getRoles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDMzMzU5NDgsImV4cCI6MTc0MzMzNzc0OH0.d8txj0homBIJQpR-uM_VSPKmvXvaNzOglkpL2LdfylE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"role"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getRoles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:57:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Roles Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"roleType\": \"ADMIN\",\n            \"description\": \"ALL PERMISSION\"\n        },\n        {\n            \"id\": 51,\n            \"roleType\": \"USER\",\n            \"description\": \"CUSTOM PERMISSION\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getRole",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDIxMjA5MjAsImV4cCI6MTc0MjEyMjcyMH0.n1nKZ9YZG7Fzl7np6AmVPE82v6-8b7-CvMcxqPngJlE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/role/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"role",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getRole",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/role/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:57:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Role Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"roleType\": \"ADMIN\",\n        \"description\": \"ALL PERMISSION\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getPermissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDIxMjA5MjAsImV4cCI6MTc0MjEyMjcyMH0.n1nKZ9YZG7Fzl7np6AmVPE82v6-8b7-CvMcxqPngJlE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/permission",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"permission"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getPermissions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permission"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:57:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Permissions Successfully\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "getPermission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDIxMjA5MjAsImV4cCI6MTc0MjEyMjcyMH0.n1nKZ9YZG7Fzl7np6AmVPE82v6-8b7-CvMcxqPngJlE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/permission/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"permission",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Nguyen\",\r\n    \"lastName\": \"Hoang\",\r\n    \"gender\": \"MALE\",\r\n    \"dob\": null,\r\n    \"email\": \"hoang1109@gmail.com\",\r\n    \"phoneNumber\": \"0988676896\",\r\n    \"username\": \"arkdev\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "introspect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"arkdev\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/introspect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"introspect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getModules",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/module",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"module"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getModule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/module/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"module",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addModule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"moduleType\": \"READING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/module/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"module",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateModule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"moduleType\": \"READING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/module/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"module",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteModule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"moduleType\": \"LISTENING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/module/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"module",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getTests",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:58:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Tests Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"testType\": \"PRACTICE_PART\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "addTest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"testType\": \"FULL_TEST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"testType\": \"PRACTICE_PART\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/test/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getExams",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exam?testId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exam"
+					],
+					"query": [
+						{
+							"key": "testId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addExam",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"examName\": \"Exam 01\",\r\n    \"totalScore\": 990,\r\n    \"duration\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exam/add?testId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exam",
+						"add"
+					],
+					"query": [
+						{
+							"key": "testId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSections",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/section?moduleId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"section"
+					],
+					"query": [
+						{
+							"key": "moduleId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getSections",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/section?moduleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"section"
+							],
+							"query": [
+								{
+									"key": "moduleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:57:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Sections Successfully\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"sectionName\": \"Photos\",\n                \"description\": \"\",\n                \"orderNumber\": 1\n            }\n        ],\n        \"totalPages\": 1,\n        \"totalElements\": 1,\n        \"pageNumber\": 0,\n        \"pageSize\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getSection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/section/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"section",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sectionName\": \"Photos\",\r\n    \"description\": \"\",\r\n    \"orderNumber\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/section/add?moduleId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"section",
+						"add"
+					],
+					"query": [
+						{
+							"key": "moduleId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPartsToSection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/section/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"section",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/part/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"part",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPartToSection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"partName\": \"Photos\",\r\n    \"description\": \"MULTIPLE_CHOICE\",\r\n    \"questionType\": \"MULTIPLE_CHOICE\",\r\n    \"instructions\": \"MULTIPLE_CHOICE\",\r\n    \"questionCount\": 10,\r\n    \"orderNumber\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/part/add?selectedId=1&checked=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"part",
+						"add"
+					],
+					"query": [
+						{
+							"key": "selectedId",
+							"value": "1"
+						},
+						{
+							"key": "checked",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getQuestions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM1NjIyOTgsImV4cCI6MTc0NDE2NzA5OH0.WUxLtcoM0jke0tgg_5Uycz0NfjFqF5fR9Lz-8a2nBc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question?partId=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					],
+					"query": [
+						{
+							"key": "partId",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getQuestions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question?partId=201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question"
+							],
+							"query": [
+								{
+									"key": "partId",
+									"value": "201"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:59:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Questions Successfully\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 501,\n                \"content\": \"Quest 06\",\n                \"options\": {\n                    \"A\": \"a\",\n                    \"B\": \"b\",\n                    \"C\": \"c\",\n                    \"D\": \"d\"\n                },\n                \"correctAnswer\": \"A\",\n                \"difficulty\": \"INTERMEDIATE\",\n                \"orderNumber\": 8\n            },\n            {\n                \"id\": 551,\n                \"content\": \"Quest 07\",\n                \"options\": {\n                    \"A\": \"a\",\n                    \"B\": \"b\",\n                    \"C\": \"c\",\n                    \"D\": \"d\"\n                },\n                \"correctAnswer\": \"B\",\n                \"difficulty\": \"INTERMEDIATE\",\n                \"orderNumber\": 9\n            },\n            {\n                \"id\": 601,\n                \"content\": \"Quest 08\",\n                \"options\": {\n                    \"A\": \"a\",\n                    \"B\": \"b\",\n                    \"C\": \"c\",\n                    \"D\": \"d\"\n                },\n                \"correctAnswer\": \"C\",\n                \"difficulty\": \"INTERMEDIATE\",\n                \"orderNumber\": 10\n            },\n            {\n                \"id\": 651,\n                \"content\": \"Quest 09\",\n                \"options\": {\n                    \"A\": \"a\",\n                    \"B\": \"b\",\n                    \"C\": \"c\",\n                    \"D\": \"d\"\n                },\n                \"correctAnswer\": \"A\",\n                \"difficulty\": \"INTERMEDIATE\",\n                \"orderNumber\": 11\n            }\n        ],\n        \"totalPages\": 1,\n        \"totalElements\": 4,\n        \"pageNumber\": 0,\n        \"pageSize\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getTestResult",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM1NjIyOTgsImV4cCI6MTc0NDE2NzA5OH0.WUxLtcoM0jke0tgg_5Uycz0NfjFqF5fR9Lz-8a2nBc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question?partId=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					],
+					"query": [
+						{
+							"key": "partId",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getQuestions Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user-test/get-result?attemptId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-test",
+								"get-result"
+							],
+							"query": [
+								{
+									"key": "attemptId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Apr 2025 06:59:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Get Test Result Successfully\",\n    \"data\": {\n        \"examName\": \"Exam 01\",\n        \"totalScore\": 550,\n        \"parts\": [\n            {\n                \"partName\": \"Photos\",\n                \"answers\": [\n                    {\n                        \"content\": \"Photos\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"A\",\n                        \"selectedAnswer\": \"A\"\n                    },\n                    {\n                        \"content\": \"Quest 01\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"B\",\n                        \"selectedAnswer\": \"A\"\n                    },\n                    {\n                        \"content\": \"Quest 02\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"A\",\n                        \"selectedAnswer\": \"B\"\n                    },\n                    {\n                        \"content\": \"Quest 03\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"C\",\n                        \"selectedAnswer\": \"B\"\n                    },\n                    {\n                        \"content\": \"Quest 04\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"C\",\n                        \"selectedAnswer\": \"C\"\n                    },\n                    {\n                        \"content\": \"Quest 05\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"A\",\n                        \"selectedAnswer\": \"C\"\n                    },\n                    {\n                        \"content\": \"Where most likely does the speaker work?\",\n                        \"options\": {\n                            \"A\": \"At a theater.\",\n                            \"B\": \"At a car dealership.\",\n                            \"C\": \"At a retail store.\",\n                            \"D\": \"At a library.\"\n                        },\n                        \"explanation\": \"The speaker is most likely working at a retail store because:\\n\\n- If the speaker mentions products, discounts, sales, or customers making purchases, it indicates a retail environment.\\n\\n- A theater (A) is mainly for entertainment, such as movies or plays, and does not focus on selling general products.\\n\\n- A car dealership (B) specializes in selling cars, not general retail items.\\n\\n- A library (D) provides books and study materials, not retail services.\\n\\nSo, a retail store (C) is the most logical workplace for the speaker.\",\n                        \"correctAnswer\": \"D\",\n                        \"selectedAnswer\": \"D\"\n                    }\n                ]\n            },\n            {\n                \"partName\": \"Question - Response\",\n                \"answers\": [\n                    {\n                        \"content\": \"Quest 06\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"A\",\n                        \"selectedAnswer\": \"A\"\n                    },\n                    {\n                        \"content\": \"Quest 07\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"B\",\n                        \"selectedAnswer\": \"C\"\n                    },\n                    {\n                        \"content\": \"Quest 08\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"C\",\n                        \"selectedAnswer\": \"A\"\n                    },\n                    {\n                        \"content\": \"Quest 09\",\n                        \"options\": {\n                            \"A\": \"a\",\n                            \"B\": \"b\",\n                            \"C\": \"c\",\n                            \"D\": \"d\"\n                        },\n                        \"explanation\": \"CORRECT\",\n                        \"correctAnswer\": \"A\",\n                        \"selectedAnswer\": \"B\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getQuestion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question?partId=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					],
+					"query": [
+						{
+							"key": "partId",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteQuestion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM0MTQ0NTYsImV4cCI6MTc0MzUwMDg1Nn0.0hKtWDBOWVi1PM8CVcjCm47-dLO8gp3bjVfLX0oDf6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question/delete/151",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question",
+						"delete",
+						"151"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addQuestion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDM1NjIyOTgsImV4cCI6MTc0NDE2NzA5OH0.WUxLtcoM0jke0tgg_5Uycz0NfjFqF5fR9Lz-8a2nBc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Where most likely does the speaker work?\",\r\n    \"options\": {\r\n        \"A\": \"At a theater.\",\r\n        \"B\": \"At a car dealership.\",\r\n        \"C\": \"At a retail store.\",\r\n        \"D\": \"At a library.\"\r\n    },\r\n    \"correctAnswer\": \"A\",\r\n    \"explanation\": \"The speaker is most likely working at a retail store because:\\n\\n- If the speaker mentions products, discounts, sales, or customers making purchases, it indicates a retail environment.\\n\\n- A theater (A) is mainly for entertainment, such as movies or plays, and does not focus on selling general products.\\n\\n- A car dealership (B) specializes in selling cars, not general retail items.\\n\\n- A library (D) provides books and study materials, not retail services.\\n\\nSo, a retail store (C) is the most logical workplace for the speaker.\",\r\n    \"difficulty\": \"BEGINNER\",\r\n    \"orderNumber\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/question/add?partId=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question",
+						"add"
+					],
+					"query": [
+						{
+							"key": "partId",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmtkZXYiLCJpYXQiOjE3NDQzMDc3NzMsImV4cCI6MTc0NDkxMjU3M30.f7IJWitoMqvPUMF_6zIRoix3052b0gl_i0EUnfL9c_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

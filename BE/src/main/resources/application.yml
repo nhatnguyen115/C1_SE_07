@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: z9tkvtu
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/test"
+    username: "postgres"
+    password: "123"
+  data:
+    redis:
+      host: redis
+      port: 6379
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
+            scope:
+              - email
+              - profile
+            redirect-uri: ${GOOGLE_REDIRECT_URI:}
+          facebook:
+            client-id: ${FACEBOOK_CLIENT_ID:}
+            client-secret: ${FACEBOOK_CLIENT_SECRET:}
+            scope:
+              - email
+              - public_profile
+
+
+api:
+  security:
+    jwt:
+      key:
+        access: Amx/EfkMnYwVMsFHooxnD2AeZPWvY5U2UD9HblsXV6E=
+        refresh: 42xzvYLllE839NhwAjE+1F6bhgMN3lCuLX7xkHBmNaM=
+server:
+  servlet:
+    context-path: /api/v1

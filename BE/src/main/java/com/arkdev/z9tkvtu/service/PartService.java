@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -24,7 +25,7 @@ public class PartService {
     SectionRepository sectionRepository;
     PartRepository partRepository;
     ExamRepository examRepository;
-    MediaMapper mediaMapper;
+    UploadMediaService uploadMediaService;
     PartMapper partMapper;
 
     public List<PartResponse> getPartsToSection(Integer sectionId) {
@@ -97,10 +98,11 @@ public class PartService {
     }
 
     @Transactional
-    public void addMediaToPart(Integer partId, MediaRequest request) {
+    public void addMediaToPart(Integer partId, MediaRequest request) throws IOException {
         Part part = partRepository.findById(partId)
                 .orElseThrow(() -> new RuntimeException("Lesson not found"));
-        Media media = mediaMapper.toMedia(request);
+        Media media = uploadMediaService.updateMedia(part.getMedia(),
+                request.getFile(), request.getMediaType());
         part.setMedia(media);
         partRepository.save(part);
     }

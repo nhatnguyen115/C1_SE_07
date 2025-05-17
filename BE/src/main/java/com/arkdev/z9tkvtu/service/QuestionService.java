@@ -38,6 +38,7 @@ public class QuestionService {
     PartRepository partRepository;
     MediaMapper mediaMapper;
     QuestionMapper questionMapper;
+    UploadMediaService uploadMediaService;
 
     public QuestionDetailsResponse<?> getQuestions(Integer partId) {
         Part part = partRepository.findById(partId)
@@ -84,10 +85,11 @@ public class QuestionService {
     }
 
     @Transactional
-    public void addMediaToQuestion(Integer questionId, MediaRequest request) {
+    public void addMediaToQuestion(Integer questionId, MediaRequest request) throws IOException {
         Question question = questionRepository.findById(questionId)
                 .orElseThrow(() -> new RuntimeException("Lesson not found"));
-        Media media = mediaMapper.toMedia(request);
+        Media media = uploadMediaService.updateMedia(question.getMedia(),
+                request.getFile(), request.getMediaType());
         question.setMedia(media);
         questionRepository.save(question);
     }

@@ -2,21 +2,16 @@ package com.arkdev.z9tkvtu.mapper;
 
 import com.arkdev.z9tkvtu.dto.Request.MediaRequest;
 import com.arkdev.z9tkvtu.model.Media;
+import com.arkdev.z9tkvtu.util.MediaType;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MediaMapper {
-    public Media toMedia(MediaRequest request) {
-        if (request == null) return null;
+    public Media toMedia(MediaType mediaType, String url) {
+        if (mediaType == null || url == null) return null;
         Media media = new Media();
-        media.setMediaType(request.getMediaType());
-        media.setUrl(request.getUrl());
+        media.setMediaType(mediaType);
+        media.setUrl(url);
         return media;
-    }
-
-    public void updateMedia(Media media, MediaRequest request) {
-        if (request == null) return;
-        media.setMediaType(request.getMediaType());
-        media.setUrl(request.getUrl());
     }
 }

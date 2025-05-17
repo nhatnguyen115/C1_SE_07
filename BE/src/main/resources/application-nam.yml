@@ -1,0 +1,38 @@
+spring:
+  docker:
+    compose:
+      enabled: false
+  application:
+    name: z9tkvtu
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/toeic_z9tkvtu"
+    username: "postgres"
+    password: "Namcam"
+  data:
+    redis:
+      host: redis
+      port: 6379
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
+            redirect-uri: "${GOOGLE_REDIRECT_URI:http://localhost:1300/auth/google/callback}"
+            client-name: https://www.googleapis.com/oauth2/v3/userinfo
+
+api:
+  security:
+    jwt:
+      key:
+        access: Amx/EfkMnYwVMsFHooxnD2AeZPWvY5U2UD9HblsXV6E=
+        refresh: 42xzvYLllE839NhwAjE+1F6bhgMN3lCuLX7xkHBmNaM=
+
+server:
+  port: 8080

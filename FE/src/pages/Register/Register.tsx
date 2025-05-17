@@ -44,7 +44,12 @@ const Register: React.FC = () => {
 
     try {
       const response = await register(payload);
-      navigate(PATH_CONSTANTS.ROOT.ROOT); // 👈 chuyển về trang chủ
+      notification.success({
+        message: response.message,
+      });
+      setTimeout(() => {
+        navigate(PATH_CONSTANTS.AUTH.LOGIN);
+      }, 2000);
     } catch (error: any) {
       notification.error({
         message: "Đăng ký thất bại. Vui lòng thử lại.",

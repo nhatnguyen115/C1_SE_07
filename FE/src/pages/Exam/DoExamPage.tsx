@@ -148,6 +148,42 @@ export const DoExamPage: React.FC<TestProps> = ({ isView = false }) => {
         <h3 className="text-3xl text-blue-700 font-semibold mb-4">
           {part.part.partName}
         </h3>
+        {part.part.url &&
+          part.part.mediaType &&
+          (() => {
+            switch (part.part.mediaType) {
+              case "IMAGE":
+                return (
+                  <img
+                    src={part.part.url}
+                    alt="question visual"
+                    className="w-full max-w-xl mb-3 rounded"
+                  />
+                );
+              case "AUDIO":
+                return (
+                  <audio
+                    controls
+                    className="w-full max-w-4xl mx-auto mb-3 block"
+                    src={part.part.url}
+                  >
+                    Trình duyệt của bạn không hỗ trợ audio.
+                  </audio>
+                );
+              case "VIDEO":
+                return (
+                  <video
+                    controls
+                    className="w-full max-w-4xl mx-auto mb-3 block rounded"
+                    src={part.part.url}
+                  >
+                    Trình duyệt của bạn không hỗ trợ video.
+                  </video>
+                );
+              default:
+                return null;
+            }
+          })()}
         {part.questions.map((question: QuestionType) => {
           const questionNumber = questionCounter++;
           const selectedAnswer = answers.find(
@@ -221,17 +257,52 @@ export const DoExamPage: React.FC<TestProps> = ({ isView = false }) => {
                 </p>
               </div>
 
-              {question.url && (
-                <img
-                  src={question.url}
-                  alt="question visual"
-                  className="w-full max-w-xl mb-3"
-                />
-              )}
+              {question.url &&
+                question.mediaType &&
+                (() => {
+                  switch (question.mediaType) {
+                    case "IMAGE":
+                      return (
+                        <img
+                          src={question.url}
+                          alt="question visual"
+                          className="w-full max-w-xl mb-3 rounded"
+                        />
+                      );
+                    case "AUDIO":
+                      return (
+                        <audio
+                          controls
+                          className="w-full max-w-4xl mx-auto mb-3 block"
+                          src={question.url}
+                        >
+                          Trình duyệt của bạn không hỗ trợ audio.
+                        </audio>
+                      );
+                    case "VIDEO":
+                      return (
+                        <video
+                          controls
+                          className="w-full max-w-4xl mx-auto mb-3 block rounded "
+                          src={question.url}
+                        >
+                          Trình duyệt của bạn không hỗ trợ video.
+                        </video>
+                      );
+                    default:
+                      return null;
+                  }
+                })()}
 
               {Object.entries(question.options).map(([key, value]) =>
                 renderOptionButton(key, value),
               )}
+              {isView ? (
+                <span className="italic text-green-600">
+                  <strong>Explanation: </strong>
+                  {question.explanation}
+                </span>
+              ) : null}
             </div>
           );
         })}
@@ -251,6 +322,11 @@ export const DoExamPage: React.FC<TestProps> = ({ isView = false }) => {
             <span>{"Return"}</span>
           </div>
 
+          <div>
+            <h2 className="text-4xl font-bold text-blue-600">
+              {examDetails?.exam.examName}
+            </h2>
+          </div>
           <div className="w-full max-w-2xl bg-gray-100 top-0 z-10 rounded-full my-10">
             {/* <audio
               controls

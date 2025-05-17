@@ -18,6 +18,8 @@ export type PartType = {
   questionCount: number;
   description: string;
   instructions: string | null;
+  mediaType?: string;
+  url?: string;
 };
 
 export type QuestionType = {
@@ -34,6 +36,7 @@ export type QuestionType = {
   explanation: string | null;
   difficulty: string;
   selectedAnswer?: string;
+  mediaType?: string;
 };
 
 export type PartWithQuestionsType = {

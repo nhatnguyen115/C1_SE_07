@@ -2,6 +2,7 @@ import { notification } from "antd";
 import React, { useEffect, useState } from "react";
 import { API_URIS } from "../api/URIConstant";
 import { PAGINATION_CONSTANT } from "../constant/PaginationConstant";
+import AddMediaModal from "../modal/AddMediaModal";
 import AddPartModal from "../modal/AddPartModal";
 import AddQuestionModal from "../modal/AddQuestionModal";
 import { http } from "../service/Http";
@@ -29,6 +30,9 @@ const ExamDetailsManagementComponent: React.FC<{ selectedId: number }> = ({
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const [isFetchQuestion, setIsFetchQuestion] = useState(false);
+  const [isAddMedia, setAddMedia] = useState(false);
+
+  const [partIdMedia, setPartIdMedia] = useState<number>(0);
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 0 && newPage < totalPages) {
@@ -57,6 +61,33 @@ const ExamDetailsManagementComponent: React.FC<{ selectedId: number }> = ({
     }
   };
 
+  const handleAddMedia = async (
+    media: { file: File; mediaType: "AUDIO" | "VIDEO" | "IMAGE" },
+    partId: number,
+  ) => {
+    try {
+      const formData = new FormData();
+      formData.append("mediaType", media.mediaType);
+      formData.append("file", media.file);
+
+      const response = await http.post(`/parts/${partId}/media`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      notification.success({
+        message: "Tải lên media thành công!",
+      });
+
+      console.log("Upload thành công:", response.data);
+    } catch (error) {
+      console.error("Upload media thất bại:", error);
+      notification.error({
+        message: "Tải lên thất bại. Vui lòng thử lại.",
+      });
+    }
+  };
   const handleDeletePart = async (partId: number) => {
     try {
       const response = await http.delete(API_URIS.PART.DELETE(partId));
@@ -123,6 +154,16 @@ const ExamDetailsManagementComponent: React.FC<{ selectedId: number }> = ({
               Thêm câu hỏi
             </button>
             <button
+              className="px-3 py-1 bg-blue-600 text-white text-sm rounded"
+              onClick={(e) => {
+                e.stopPropagation();
+                setAddMedia(true);
+                setPartIdMedia(part.id ?? 0);
+              }}
+            >
+              Thêm media
+            </button>
+            <button
               className="px-2 py-1 text-xs bg-yellow-400 text-white rounded"
               onClick={(e) => {
                 e.stopPropagation();
@@ -157,6 +198,12 @@ const ExamDetailsManagementComponent: React.FC<{ selectedId: number }> = ({
         onClose={() => setEditPartModalOpen(false)}
         initialData={partToEdit!}
         onSubmit={handleUpdatePart}
+      />
+
+      <AddMediaModal
+        isOpen={isAddMedia}
+        onClose={() => setAddMedia(false)}
+        onSubmit={(media) => handleAddMedia(media, partIdMedia)}
       />
       {showConfirmModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">

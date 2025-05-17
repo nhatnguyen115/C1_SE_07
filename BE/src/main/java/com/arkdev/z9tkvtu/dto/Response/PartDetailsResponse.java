@@ -1,5 +1,6 @@
 package com.arkdev.z9tkvtu.dto.Response;
 
+import com.arkdev.z9tkvtu.util.MediaType;
 import com.arkdev.z9tkvtu.util.QuestionType;
 
 import java.io.Serializable;
@@ -12,5 +13,7 @@ public record PartDetailsResponse(
         String description,
         String instructions,
         Integer correctCount,
-        Integer totalTime)implements Serializable {
+        Integer totalTime,
+        String url,
+        MediaType mediaType)implements Serializable {
 }

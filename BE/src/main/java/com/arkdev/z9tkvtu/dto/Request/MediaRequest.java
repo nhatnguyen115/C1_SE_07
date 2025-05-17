@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 
@@ -21,6 +22,6 @@ public class MediaRequest implements Serializable {
     @NotNull(message = "Media type must be not null")
     MediaType mediaType;
     
-    @NotNull(message = "Url must be not null")
-    String url;
+    @NotNull(message = "File must be not null")
+    MultipartFile file;
 }

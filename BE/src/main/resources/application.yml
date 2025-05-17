@@ -3,8 +3,8 @@ spring:
     name: z9tkvtu
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:5432/test"
-    username: "postgres"
+    url: "jdbc:postgresql://postgres:5432/toeic_z9tkvtu"
+    username: "root"
     password: "123"
   data:
     redis:
@@ -34,6 +34,10 @@ spring:
             scope:
               - email
               - public_profile
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 
 api:

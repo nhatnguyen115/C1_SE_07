@@ -8,6 +8,7 @@ import PaginationStaticComponent from "./PaginationStaticComponent";
 import QuestionCardComponent from "./QuestionCardComponent";
 import QuestionFillInBlankComponent from "./QuestionFillInBlankComponent";
 import QuestionSpeakComponent from "./QuestionSpeakComponent";
+import QuestionWriteComponent from "./QuestionWriteComponent";
 
 type PartDetailsComponentProps = {
   partId: number;
@@ -94,6 +95,26 @@ const PartDetailsComponent: React.FC<PartDetailsComponentProps> = ({
           renderItem={(question, index) => (
             <div key={question.id}>
               <QuestionSpeakComponent
+                key={question.id}
+                question={question}
+                index={index}
+                answer={question.selectedAnswer}
+                onAnswer={(answer) =>
+                  setAnswers((prev) => ({ ...prev, [question.id]: answer }))
+                }
+              />
+            </div>
+          )}
+        />
+      ) : null}
+
+      {questionType == QUESTION_TYPE.ESSAY ? (
+        <PaginationStaticComponent
+          items={questions}
+          itemsPerPage={5}
+          renderItem={(question, index) => (
+            <div key={question.id}>
+              <QuestionWriteComponent
                 key={question.id}
                 question={question}
                 index={index}

@@ -47,8 +47,8 @@ const AddQuestionModal: React.FC<AddQuestionModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white w-3/5 p-6 rounded shadow">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+      <div className="bg-white w-3/5 p-6 rounded shadow ">
         <h2 className="text-lg font-semibold mb-4">Thêm câu hỏi</h2>
 
         <div className="mb-3">

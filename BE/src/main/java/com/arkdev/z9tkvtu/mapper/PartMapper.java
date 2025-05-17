@@ -37,7 +37,11 @@ public class PartMapper {
                 part.getQuestionType(),
                 part.getQuestionCount(),
                 part.getDescription(),
-                part.getInstructions()
+                part.getInstructions(),
+                part.getMedia() != null ?
+                        part.getMedia().getUrl() : null,
+                part.getMedia() != null ?
+                        part.getMedia().getMediaType() : null
         );
     }
     public PartDetailsResponse toPartDetailsResponse(SectionPartPractice practice) {
@@ -50,7 +54,11 @@ public class PartMapper {
                 practice.getPart().getDescription(),
                 practice.getPart().getInstructions(),
                 practice.getCorrectCount(),
-                practice.getTotalTime()
+                practice.getTotalTime(),
+                practice.getPart().getMedia() != null ?
+                        practice.getPart().getMedia().getUrl() : null,
+                practice.getPart().getMedia() != null ?
+                        practice.getPart().getMedia().getMediaType() : null
         );
     }
 
@@ -64,7 +72,11 @@ public class PartMapper {
                 part.getDescription(),
                 part.getInstructions(),
                 null,
-                null
+                null,
+                part.getMedia() != null ?
+                        part.getMedia().getUrl() : null,
+                part.getMedia() != null ?
+                        part.getMedia().getMediaType() : null
         );
     }
 }

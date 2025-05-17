@@ -5,6 +5,7 @@ import com.arkdev.z9tkvtu.dto.Request.QuestionRequest;
 import com.arkdev.z9tkvtu.dto.Response.ResponseData;
 import com.arkdev.z9tkvtu.dto.Response.ResponseError;
 import com.arkdev.z9tkvtu.service.QuestionService;
+import com.arkdev.z9tkvtu.util.MediaType;
 import com.arkdev.z9tkvtu.util.Pagination;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
@@ -71,8 +72,10 @@ public class QuestionController {
 
     @PostMapping("/{questionId}/media")
     public ResponseData<?> addMediaToQuestion(@PathVariable Integer questionId,
-                                              @RequestBody MediaRequest request) {
+                                              @RequestPart("mediaType") String mediaType,
+                                              @RequestPart("file") MultipartFile file) {
         try {
+            MediaRequest request = new MediaRequest(MediaType.valueOf(mediaType), file);
             questionService.addMediaToQuestion(questionId, request);
             return new ResponseData<>(HttpStatus.OK.value(), "Add Media To Question Successfully");
         } catch (Exception e) {

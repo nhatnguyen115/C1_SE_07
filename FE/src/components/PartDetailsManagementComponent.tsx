@@ -1,5 +1,7 @@
+import { notification } from "antd";
 import React, { useEffect, useState } from "react";
 import { API_URIS } from "../api/URIConstant";
+import AddMediaModal from "../modal/AddMediaModal";
 import AddQuestionModal from "../modal/AddQuestionModal";
 import { http } from "../service/Http";
 import PaginationComponent from "./PaginationComponent";
@@ -20,9 +22,45 @@ const PartDetailsManagementComponent: React.FC<{
   const [totalPages, setTotalPages] = useState(1);
   const [showAddModal, setShowAddModal] = useState(false);
   const [editData, setEditData] = useState<Question | null>(null);
+
+  const [isAddMedia, setAddMedia] = useState(false);
+
+  const [questionMedia, setQuestionMedia] = useState<number>(0);
   const handlePageChange = (newPage: number) => {
     if (newPage >= 0 && newPage < totalPages) {
       setPage(newPage);
+    }
+  };
+
+  const handleAddMedia = async (
+    media: { file: File; mediaType: "AUDIO" | "VIDEO" | "IMAGE" },
+    questionId: number,
+  ) => {
+    try {
+      const formData = new FormData();
+      formData.append("mediaType", media.mediaType);
+      formData.append("file", media.file);
+
+      const response = await http.post(
+        `/questions/${questionId}/media`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        },
+      );
+
+      notification.success({
+        message: "Tải lên media thành công!",
+      });
+
+      console.log("Upload thành công:", response.data);
+    } catch (error) {
+      console.error("Upload media thất bại:", error);
+      notification.error({
+        message: "Tải lên thất bại. Vui lòng thử lại.",
+      });
     }
   };
   useEffect(() => {
@@ -63,6 +101,16 @@ const PartDetailsManagementComponent: React.FC<{
           </div>
           <div className="mt-2 space-x-2">
             <button
+              className="px-3 py-1 bg-blue-600 text-white text-sm rounded"
+              onClick={(e) => {
+                e.stopPropagation();
+                setAddMedia(true);
+                setQuestionMedia(q.id ?? 0);
+              }}
+            >
+              Thêm media
+            </button>
+            <button
               className="px-2 py-1 text-xs bg-yellow-500 text-white rounded"
               onClick={() => {
                 setEditData(q);
@@ -93,6 +141,12 @@ const PartDetailsManagementComponent: React.FC<{
           partId={partId}
         />
       ) : null}
+
+      <AddMediaModal
+        isOpen={isAddMedia}
+        onClose={() => setAddMedia(false)}
+        onSubmit={(media) => handleAddMedia(media, questionMedia)}
+      />
 
       <PaginationComponent
         currentPage={page}

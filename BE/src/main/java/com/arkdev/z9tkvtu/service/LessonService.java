@@ -16,6 +16,7 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -24,7 +25,7 @@ import java.util.List;
 public class LessonService {
     LessonRepository lessonRepository;
     SectionRepository sectionRepository;
-    MediaMapper mediaMapper;
+    UploadMediaService uploadMediaService;
     LessonMapper lessonMapper;
 
     public List<LessonDetailsResponse> getLessons(Integer sectionId) {
@@ -71,10 +72,11 @@ public class LessonService {
     }
 
     @Transactional
-    public void addMediaToLesson(Integer lessonId, MediaRequest request) {
+    public void addMediaToLesson(Integer lessonId, MediaRequest request) throws IOException {
         Lesson lesson = lessonRepository.findById(lessonId)
                 .orElseThrow(() -> new RuntimeException("Lesson not found"));
-        Media media = mediaMapper.toMedia(request);
+        Media media = uploadMediaService.updateMedia(lesson.getMedia(),
+                request.getFile(), request.getMediaType());
         lesson.setMedia(media);
         lessonRepository.save(lesson);
     }
